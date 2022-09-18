@@ -12,6 +12,14 @@ export const ToppingsContainer = styled.div`
   margin: 0 32px;
   padding-top: 55px;
 }
+@media(min-width: 1200px) {
+  margin-left: 64px;
+  margin-right: 64px;
+}
+@media(min-width: 1600px) {
+  margin-left: 92px;
+  margin-right: 92px;
+}
 `
 
 export const Title = styled.h2`
@@ -81,6 +89,7 @@ letter-spacing: 0.2px;
 `
 
 export const ToggleMobileAdd = styled.div`
+cursor: pointer;
 @media(min-width: 600px) {
   display: none;
 }
@@ -103,6 +112,7 @@ left: 1px;
 `
 
 export const ShowOrHideMobile = styled.div`
+cursor: pointer;
 display: none;
 @media(min-width: 600px) {
   display: block;
@@ -125,6 +135,7 @@ line-height: 16px;
 
 display: flex;
 align-items: center;
+cursor: pointer;
 @media(min-width: 600px) {
   display: none;
 }
@@ -137,6 +148,7 @@ font-size: 12px;
 line-height: 16px;
 display: none;
 letter-spacing: 0.6px;
+cursor: pointer;
 
 @media(min-width: 600px) {
   display: flex;
@@ -157,7 +169,7 @@ align-items: center;
   padding: 14px 0;
 }
 
-@media(min-width: 800px) {
+@media(min-width: 1200px) {
   display: none;
 }
 `

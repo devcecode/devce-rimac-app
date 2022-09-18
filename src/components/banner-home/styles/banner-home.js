@@ -44,7 +44,7 @@ export const BannerContent = styled.div`
 
 export const BannerContentContainer = styled.div`
 @media(min-width: 960px) {
-  min-width: 320px;
+  /* min-width: 320px; */
 }
 `
 
@@ -142,12 +142,12 @@ line-height: 20px;
 position: fixed;
 bottom: 60px;
 left: 32px;
-max-width: calc(100% - 300px);
+@media(min-width: 1200px) {
+  left: 5%;
 }
-
 @media(min-width: 1600px) {
-  width: 1600px;
-  left: calc((100% - 1600px) / 2);
+  left: 12.5%;
+}
 }
 `
 

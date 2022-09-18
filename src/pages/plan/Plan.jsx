@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { PlanStyled } from './styles/plan'
+import { PlanStyled, PlanContainer } from './styles/plan'
 
-import ProgressPlan from '../../components/progress-plan/ProgressPlan'
-import ResumePlan from '../../components/resume-plan/ResumePlan'
-import PreviewMountPlan from '../../components/preview-mount-plan/PreviewMountPlan'
-import ToppingsPlan from '../../components/toppings-plan/ToppingsPlan'
 import SiderbarPlan from '../../components/sidebar-plan/SiderbarPlan'
+import TotalAmountPlan from '../../components/total-amount-plan/TotalAmountPlan'
+import MainPlan from '../../components/main-plan/MainPlan'
 
 function Plan() {
   const user     = useSelector(({ user }) => user)
@@ -32,10 +30,10 @@ function Plan() {
     if(user) return (
       <PlanStyled>
         <SiderbarPlan />
-        <ProgressPlan />
-        <ResumePlan />
-        <PreviewMountPlan />
-        <ToppingsPlan />
+        <PlanContainer>
+          <MainPlan />
+          <TotalAmountPlan />
+        </PlanContainer>
       </PlanStyled>
     )
   }

@@ -6,6 +6,14 @@ padding: 32px;
 @media(min-width: 600px) {
   background-color: #ffffff;
 }
+@media(min-width: 1200px) {
+  padding-left: 64px;
+  padding-right: 64px;
+}
+@media(min-width: 1600px) {
+  padding-left: 92px;
+  padding-right: 92px;
+}
 `
 
 export const MobileTitle  = styled.h2`
@@ -54,6 +62,10 @@ box-shadow: 0px 0px 10px rgba(163, 171, 204, 0.12);
   box-shadow: none;
   border: 3px solid #F0F2FA;
 }
+
+@media(min-width: 1200px) {
+  height: 200px;
+}
 `
 export const CarResumeContainer = styled.div`
 `
@@ -71,6 +83,10 @@ font-weight: 400;
 width: 150px;
 color: #494F66;
 letter-spacing: 0.2px;
+@media(min-width: 1200px) {
+  font-size: 20px;
+  line-height: 28px;
+}
 `
 
 
@@ -78,4 +94,9 @@ export const Picture     = styled.img`
 position: absolute;
 right: 0px;
 bottom: 0;
+
+@media(min-width: 1200px) {
+  height: 110%;
+  right: 20px;
+}
 `

@@ -8,7 +8,7 @@ import { DecreaseMount,
          PreviewMountMinMax, 
          PreviewMountStyled, 
          PreviewMountTitle 
-       } from './styles/preview-mount-plan'
+       } from './styles/preview-amount-plan'
 
 function PreviewMountPlan() {
 

@@ -11,3 +11,8 @@ padding-top: 56px;
   margin-left: 30%;
 }
 `
+export const PlanContainer = styled.div`
+@media(min-width: 1200px) {
+  display: flex;
+}
+`

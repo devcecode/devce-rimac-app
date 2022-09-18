@@ -14,12 +14,15 @@ height: 56px;
 display: flex;
 justify-content: space-between;
 align-items: center;
-max-width: 1600px;
 @media(min-width: 600px) {
   height: 64px;
 }
+@media(min-width: 1200px) {
+  margin: 0 5%;
+}
+
 @media(min-width: 1600px) {
-  margin: 0 auto;
+  margin: 0 12.5%;
 }
 `
 

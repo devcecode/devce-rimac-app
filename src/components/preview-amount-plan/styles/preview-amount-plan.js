@@ -14,6 +14,14 @@ margin: 0 32px;
   align-items: center;
   justify-content: space-between;
 }
+@media(min-width: 1200px) {
+  margin-left: 64px;
+  margin-right: 64px;
+}
+@media(min-width: 1600px) {
+  margin-left: 92px;
+  margin-right: 92px;
+}
 `
 
 export const PreviewMountTitle = styled.p`
