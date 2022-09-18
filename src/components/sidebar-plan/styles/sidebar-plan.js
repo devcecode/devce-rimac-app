@@ -11,7 +11,3 @@ display: none;
   height: calc(100vh - 64px);
 }
 `
-
-export const SidebarContainer = styled.div`
-
-`

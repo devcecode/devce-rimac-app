@@ -1,5 +1,18 @@
 import React from 'react'
-import { BannerContent, BannerContentContainer, BannerDesktopImage, BannerHomeContainer, BannerHomeStyled, BannerImage, BannerImageContainer, CopyRight, Paragraph, Subtitle, Title, TitleSpan } from './styles/banner-home'
+
+import { BannerContent, 
+         BannerContentContainer, 
+         BannerDesktopImage, 
+         BannerHomeContainer, 
+         BannerHomeStyled, 
+         BannerImage, 
+         BannerImageContainer, 
+         CopyRight, 
+         Paragraph, 
+         Subtitle, 
+         Title, 
+         TitleSpan 
+       } from './styles/banner-home'
 
 import bannerImage from '../../assets/group.svg'
 import bannerDesktopBackgroundImage from '../../assets/mask-group.svg'

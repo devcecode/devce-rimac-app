@@ -1,5 +1,4 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 import { HeaderContactDesktop, 
@@ -17,13 +16,11 @@ import icPhoneMobile from '../../assets/ic_phone_mobile.svg'
 
 function Header() {
 
-  const navigate = useNavigate()
-
-  const mode         = useSelector(({ mode }) => mode)
+  const navigate     = useNavigate()
   const { pathname } = useLocation()
 
   return (
-    <HeaderStyled background={mode.primaryBackgroundColor} style={pathname !== '/' ? {borderBottom: '1px solid #E4E8F7', backgroundColor: '#ffffff'} : {border: 'none'}}>
+    <HeaderStyled style={pathname !== '/' ? {borderBottom: '1px solid #E4E8F7', backgroundColor: '#ffffff'} : {border: 'none'}}>
       <HeaderContainer>
         <HeaderLeft onClick={e => navigate('/')}>
           <HeaderLogo src={logo}/>
@@ -36,7 +33,6 @@ function Header() {
           <HeaderContactDesktop>
             <span style={{color: '#676F8F'}}>¿Tienes alguna Duda?</span>
             <img src={icPhone} style={{marginRight: '8px', marginLeft: '23px'}}/>
-            {/* <ion-icon name="call" style={{marginRight: '8px', marginLeft: '23px', fontSize: '20px', transform: 'translateY(1.5px)'}}></ion-icon> */}
             (051) 985574152
           </HeaderContactDesktop>
         </HeaderRight>

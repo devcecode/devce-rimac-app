@@ -119,12 +119,17 @@ display: none;
 }
 `
 
-export const Content = styled.div`
+export const Content = styled.p`
 margin-top: 11px;
 color: #676F8F;
 font-size: 14px;
 line-height: 24px;
 margin-bottom: 21px;
+display: none;
+
+&.topping-active {
+  display: block;
+}
 `
 
 export const FooterMobile  = styled.div`
@@ -143,6 +148,7 @@ cursor: pointer;
 
 export const FooterDesktop = styled.div`
 color: #939DFF;
+margin-top: 12px;
 font-weight: 700;
 font-size: 12px;
 line-height: 16px;
@@ -212,8 +218,6 @@ display: none;
 `
 
 export const TotalAmountTitle = styled.h2``
-
-export const TotalAmountSubtitle = styled.h4``
 
 export const OrderDescription = styled.div``
 

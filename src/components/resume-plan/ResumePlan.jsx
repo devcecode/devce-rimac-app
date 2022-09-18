@@ -15,10 +15,7 @@ import picture from '../../assets/picture.svg'
 import { useSelector } from 'react-redux'
 
 function ResumePlan() {
-
   const user = useSelector(({ user }) => user)
-
-  console.log( user )
   return (
     <ResumePlanStyled>
       <MobileTitle>Mira las coberturas</MobileTitle>

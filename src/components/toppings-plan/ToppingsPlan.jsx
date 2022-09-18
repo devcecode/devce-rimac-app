@@ -1,51 +1,60 @@
 import React, { useState } from 'react'
-import { Title, ToppingName, ToppingsContainer, ToppingsTop, ToppingsPlanStyled, Header, Left, Right, Icon, HeaderTitle, Content, ToppingsMiddle, TotalAmount, GoToButton, FooterMobile, ToggleMobileContainer, ToggleMobileElement, TotalAmountContainerMobile, ToggleMobileAdd, ShowOrHideMobile, FooterDesktop } from './styles/toppings-plan'
+import { useNavigate } from 'react-router-dom'
 
-import icon1 from '../../assets/icon1.svg'
-import icon2 from '../../assets/icon2.svg'
-import icon3 from '../../assets/icon3.svg'
+import { Title, 
+         ToppingName, 
+         ToppingsContainer, 
+         ToppingsTop, 
+         ToppingsPlanStyled, 
+         Header, 
+         Left, 
+         Right, 
+         Icon, 
+         HeaderTitle, 
+         Content, 
+         ToppingsMiddle, 
+         TotalAmount, 
+         GoToButton, 
+         FooterMobile, 
+         ToggleMobileContainer, 
+         ToggleMobileElement, 
+         TotalAmountContainerMobile, 
+         ToggleMobileAdd, 
+         ShowOrHideMobile, 
+         FooterDesktop 
+       } from './styles/toppings-plan'       
 
-const toppings = {
-  "Protege a tu auto": [
-    {
-      title: "Llanta Robada",
-      content: "He salido de casa a las cuatro menos cinco para ir a la academia de ingles de mi pueblo (Sant Cugat, al lado de Barcelona) con mi bici, na llego a la academia que está en el centro del pueblo en una plaza medio-grande y dejo donde siempre la bici atada con una pitón a un sitio de esos de poner las bicis",
-      image: icon1,
-      amount: 15
-    },
-    {
-      title: "Choque y/o pasarse la luz roja",
-      image: icon2,
-      amount: 20
-    },
-    {
-      title: "Atropello en vía de evitamiento",
-      image: icon3,
-      amount: 50
-    }
-  ],
-  "Protege a lo que te rodean": [
-    {
-      title: "otro",
-      image: ""
-    }
-  ],
-  "Mejora tu Plan": [
-    {
-      "title": "hola",
-      image: ""
-    }
-  ]
-}
+import { toppings } from './toppings'
 
 function ToppingsPlan() {
   
-  const toppinsNames                = Object.keys(toppings)
-  const [ tabActive, setTabActive ] = useState(toppinsNames[0])
+  const navigate = useNavigate()
+  const toppingsProperty                = Object.keys(toppings)
+  const [ tabActive, setTabActive ]     = useState(toppingsProperty[0])
+  
+  const [ toppingsActive, setToppingsActive ] = useState([toppings[toppingsProperty[0]][0].title])
 
   const handleChangeTabActive = e => {
     e.preventDefault()
-    setTabActive(toppinsNames[e.target.id])
+    setTabActive(toppingsProperty[e.target.id])
+  }
+
+
+  const handleShowOrHideTopping = e => {
+    const current = e.target.id
+    const result = toppingsActive.find(x => x === current)
+
+    if(!result) {
+      setToppingsActive(x => [...x, current])
+    }else {
+      toppingsActive.find((x, i) => {
+        const lol = toppingsActive
+        if(current === x) {
+          const filter =lol.filter(e => e !== x)
+          setToppingsActive(filter)
+        }
+      })
+    }
   }
 
   return (
@@ -54,8 +63,8 @@ function ToppingsPlan() {
         <Title>Agrega o quita coberturas</Title>
         <ToppingsTop>
           {
-            toppinsNames.map((t, i) => (
-              <ToppingName key={i} style={toppinsNames[i] === tabActive ? {color: 'red', borderBottom: '2px solid #EF3340'}: {}} onClick={handleChangeTabActive} id={i}>{t.toUpperCase()}</ToppingName>
+            toppingsProperty.map((t, i) => (
+              <ToppingName key={i} style={toppingsProperty[i] === tabActive ? {color: 'red', borderBottom: '2px solid #EF3340'}: {}} onClick={handleChangeTabActive} id={i}>{t.toUpperCase()}</ToppingName>
             ))
           }
         </ToppingsTop>
@@ -74,10 +83,14 @@ function ToppingsPlan() {
                     </ToggleMobileContainer>
                   </ToggleMobileAdd>
                   <ShowOrHideMobile>
-                    <ion-icon name="chevron-up-outline" style={{color: '#EF3340'}}></ion-icon>
+                    <ion-icon name="chevron-up-outline" style={{color: '#EF3340', userSelect: 'none'}} onClick={handleShowOrHideTopping} id={t.title}></ion-icon>
                   </ShowOrHideMobile>
                 </Header>
-                <Content>{t.content}</Content>
+                {
+                  toppingsActive.map((ta, i) => (
+                    t.title === ta ? (<Content className='topping-active' key={i}>{t.content}</Content>) : (<Content key={i}>{t.content}</Content>)
+                  ))
+                }
                 <FooterMobile>
                   VER MÁS <ion-icon name="chevron-up-outline" style={{marginLeft: '11px', fontWeight: '400'}}></ion-icon>
                 </FooterMobile>
@@ -90,7 +103,7 @@ function ToppingsPlan() {
         }
         <TotalAmountContainerMobile>
           <TotalAmount>$35.00 <span style={{fontSize: '10px', lineHeight: '16px', color: '#494F66'}}>MENSUAL</span></TotalAmount>
-          <GoToButton>LO QUIERO</GoToButton>
+          <GoToButton onClick={e => navigate('/bien-venida')}>LO QUIERO</GoToButton>
         </TotalAmountContainerMobile>
       </ToppingsContainer>
     </ToppingsPlanStyled>

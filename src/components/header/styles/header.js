@@ -27,6 +27,7 @@ align-items: center;
 `
 
 export const HeaderLeft  = styled.div`
+cursor: pointer;
 `
 export const HeaderRight = styled.div``
 

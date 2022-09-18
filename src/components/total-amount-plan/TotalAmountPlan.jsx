@@ -1,7 +1,9 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Button, Descrition, OrderDescription, OrderDescriptionTitle, OrderList, TotalAmountPLanContainer, TotalAmountPLanStyled, TotalAmountSubtitle, TotalAmountTitle } from './styles/total-amount-plan'
 
 function TotalAmountPlan() {
+  const navigate = useNavigate()
   return (
     <TotalAmountPLanStyled>
       <TotalAmountPLanContainer>
@@ -16,7 +18,7 @@ function TotalAmountPlan() {
 
             <Descrition><ion-icon name="checkmark-outline" style={{marginRight: '19.42px', color: '#43B748'}}></ion-icon> Aros Gratis</Descrition>
           </OrderList>
-          <Button>LO QUIERO</Button>
+          <Button onClick={e => navigate('/bien-venida')}>LO QUIERO</Button>
         </OrderDescription>
       </TotalAmountPLanContainer>
     </TotalAmountPLanStyled>

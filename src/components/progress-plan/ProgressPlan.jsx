@@ -1,10 +1,16 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { ProgressPlanStyled, ProgressCount, ProgressBarContainer, ProgressBar, BackLinkDesktop, BackLinkMobile } from './styles/progress-plan'
+
+import { ProgressPlanStyled, 
+         ProgressCount, 
+         ProgressBarContainer, 
+         ProgressBar, 
+         BackLinkDesktop, 
+         BackLinkMobile 
+       } from './styles/progress-plan'
 
 function ProgressPlan() {
-
   const navigate = useNavigate()
   const progress = useSelector(({ progress }) => progress)
   return (

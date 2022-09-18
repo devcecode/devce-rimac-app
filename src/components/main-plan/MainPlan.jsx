@@ -4,15 +4,16 @@ import ProgressPlan from '../progress-plan/ProgressPlan'
 import ResumePlan from '../resume-plan/ResumePlan'
 import PreviewAmountPlan from '../preview-amount-plan/PreviewAmountPlan'
 import ToppingsPlan from '../toppings-plan/ToppingsPlan'
+import { MainPlanStyled } from './styles/plan-main'
 
 function MainPlan() {
   return (
-    <div>
+    <MainPlanStyled>
       <ProgressPlan />
       <ResumePlan />
       <PreviewAmountPlan />
       <ToppingsPlan />
-    </div>
+    </MainPlanStyled>
   )
 }
 

@@ -34,11 +34,11 @@ function LoginFormHome() {
   const docs = ['DNI', 'C. EXTRANJERÍA', 'PASAPORTE']
   const [ select, setSelect ]               = useState('DNI')
   const [ selectVisible, setSelectVisible ] = useState(false)
-  const [ isChecked, setIsChecked ]         = useState(false)
+  const [ isChecked, setIsChecked ]         = useState(true)
   
-  const [ doc, setDoc ]                   = useState('')
-  const [ phone, setPhone ]               = useState('')
-  const [ licencePlate, setLicencePlate ] = useState('')
+  const [ doc, setDoc ]                   = useState('76480931')
+  const [ phone, setPhone ]               = useState('985574152')
+  const [ licencePlate, setLicencePlate ] = useState('4557-JM')
   
   const [ docError, setDocError ]                   = useState('')
   const [ phoneError, setPhoneError ]               = useState('')
@@ -150,8 +150,6 @@ function LoginFormHome() {
             </PoliticsMessageContainer>
             {checkedError && <InputError>{checkedError}</InputError>}
           </PoliticsMessage>
-
-
 
           <Button onClick={validateData}>COTÍZALO</Button>
         </Form>

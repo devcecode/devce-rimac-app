@@ -1,14 +1,8 @@
 import React from 'react'
-import { SidebarContainer, SidebarPlanStyled } from './styles/sidebar-plan'
+import { SidebarPlanStyled } from './styles/sidebar-plan'
 
 function SiderbarPlan() {
-  return (
-    <SidebarPlanStyled>
-      <SidebarContainer>
-
-      </SidebarContainer>
-    </SidebarPlanStyled>
-  )
+  return (<SidebarPlanStyled></SidebarPlanStyled>)
 }
 
 export default SiderbarPlan

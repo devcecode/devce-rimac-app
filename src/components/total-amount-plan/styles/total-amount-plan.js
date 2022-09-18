@@ -18,7 +18,7 @@ display: none;
 `
 
 export const TotalAmountPLanContainer = styled.div`
-width: 300px;
+width: 287.5px;
 `
 
 export const TotalAmountTitle = styled.h2`
@@ -76,4 +76,5 @@ color: #ffffff;
 background-color: #EF3340;
 border-radius: 8px;
 margin-top: 24px;
+cursor: pointer;
 `

@@ -6,18 +6,7 @@ import { createStore } from 'redux'
 import App from './App'
 import './index.css'
 
-import light from './mode/light.json'
-import night from './mode/night.json'
-
-
-console.log( night )
-
-const initialState = {
-  mode: night,
-  user: null,
-  progress: 1,
-  totalAmount: 0
-}
+const initialState = { user: null, progress: 1, totalAmount: 0 }
 
 const reducer = (state, action) => {
   if(action.type === 'SET_USER') return {...state, user: action.currentUser}
