@@ -4,7 +4,7 @@ export const TotalAmountPLanStyled   = styled.div`
 position: sticky;
 top: 96px;
 height: 500px;
-margin-top: 150px;
+margin-top: 185px;
 margin-right: 32px;
 display: none;
 @media(min-width: 1200px) {

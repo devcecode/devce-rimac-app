@@ -15,15 +15,15 @@ export const toppings = {
     },
     {
       title: "Choque y/o pasarse la luz roja",
+      content: "Sabemos que un accidente puede ocurrir en cualquier momento. Para tu tranquilidad, hemos analizado y discutido algunas cosas en tu beneficio!!",
       image: icon2,
       amount: 20,
-      content: "hola"
     },
     {
       title: "Atropello en vía de evitamiento",
+      content: "Tambien tenemos algunos planes bien estudiados para estos casos",
       image: icon3,
       amount: 50,
-      content: "joder"
     }
   ],
   "Protege a lo que te rodean": [
