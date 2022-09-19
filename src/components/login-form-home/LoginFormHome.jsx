@@ -48,7 +48,6 @@ function LoginFormHome() {
   const [ success, setSuccess ] = useState(false)
 
   const progress = useSelector(({ progress }) => progress)
-
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
