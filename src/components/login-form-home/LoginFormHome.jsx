@@ -47,6 +47,8 @@ function LoginFormHome() {
 
   const [ success, setSuccess ] = useState(false)
 
+  const progress = useSelector(({ progress }) => progress)
+
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
@@ -88,6 +90,11 @@ function LoginFormHome() {
         dispatch({
           type: 'SET_USER',
           currentUser: {...user, doc, phone, licencePlate}
+        })
+
+        dispatch({
+          type: 'SET_PROGRESS',
+          currentProgress: progress + 1
         })
 
         navigate('/plan')

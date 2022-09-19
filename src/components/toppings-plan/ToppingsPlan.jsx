@@ -19,9 +19,9 @@ import { Title,
          ToggleMobileContainer, 
          ToggleMobileElement, 
          TotalAmountContainerMobile, 
-         ToggleMobileAdd, 
-         ShowOrHideMobile, 
-         FooterDesktop 
+         ToggleMobileAdd,
+         FooterDesktop, 
+         ShowOrHideDesktop
        } from './styles/toppings-plan'       
 
 import { toppings } from './toppings'
@@ -82,20 +82,20 @@ function ToppingsPlan() {
                       <ToggleMobileElement></ToggleMobileElement>
                     </ToggleMobileContainer>
                   </ToggleMobileAdd>
-                  <ShowOrHideMobile>
-                    <ion-icon name="chevron-up-outline" style={{color: '#EF3340', userSelect: 'none'}} onClick={handleShowOrHideTopping} id={t.title}></ion-icon>
-                  </ShowOrHideMobile>
+                  <ShowOrHideDesktop onClick={handleShowOrHideTopping} id={t.title}>
+                    <ion-icon name="chevron-up-outline" style={{color: '#EF3340', userSelect: 'none'}} id={t.title}></ion-icon>
+                  </ShowOrHideDesktop>
                 </Header>
                 {
                   toppingsActive.map((ta, i) => (
                     t.title === ta ? (<Content className='topping-active' key={i}>{t.content}</Content>) : (<Content key={i}>{t.content}</Content>)
                   ))
                 }
-                <FooterMobile>
-                  VER MÁS <ion-icon name="chevron-up-outline" style={{marginLeft: '11px', fontWeight: '400'}}></ion-icon>
+                <FooterMobile onClick={handleShowOrHideTopping} id={t.title}>
+                  VER MÁS <ion-icon name="chevron-up-outline" style={{marginLeft: '11px', fontWeight: '400'}} id={t.title}></ion-icon>
                 </FooterMobile>
                 <FooterDesktop>
-                <ion-icon name="add-circle-outline" style={{fontSize: '28px', marginRight: '12px'}}></ion-icon> AGREGAR
+                  <ion-icon name="add-circle-outline" style={{fontSize: '28px', marginRight: '12px'}}></ion-icon> AGREGAR
                 </FooterDesktop>
               </Right>
             </ToppingsMiddle>

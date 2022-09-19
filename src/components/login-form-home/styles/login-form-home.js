@@ -85,6 +85,7 @@ background-color: #43B748;
 display: flex;
 justify-content: center;
 align-items: center;
+user-select: none;
 `
 
 export const Icon = styled.span`

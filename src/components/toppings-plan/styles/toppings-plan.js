@@ -111,7 +111,7 @@ top: 1px;
 left: 1px;
 `
 
-export const ShowOrHideMobile = styled.div`
+export const ShowOrHideDesktop = styled.div`
 cursor: pointer;
 display: none;
 @media(min-width: 600px) {

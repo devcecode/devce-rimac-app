@@ -59,6 +59,9 @@ min-width: 160px;
 `
 
 export const IncreaseMount = styled.span`
+cursor: pointer;
 `
 export const Mount = styled.p``
-export const DecreaseMount = styled.span``
+export const DecreaseMount = styled.span`
+cursor: pointer;
+`

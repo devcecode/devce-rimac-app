@@ -13,8 +13,11 @@ import { HeaderContactDesktop,
 import logo from '../../assets/logo/Logo RIMAC.svg'
 import icPhone from '../../assets/ic_phone.svg'
 import icPhoneMobile from '../../assets/ic_phone_mobile.svg'
+import { useDispatch } from 'react-redux'
 
 function Header() {
+
+  const dispatch = useDispatch()
 
   const navigate     = useNavigate()
   const { pathname } = useLocation()
@@ -22,7 +25,13 @@ function Header() {
   return (
     <HeaderStyled style={pathname !== '/' ? {borderBottom: '1px solid #E4E8F7', backgroundColor: '#ffffff'} : {border: 'none'}}>
       <HeaderContainer>
-        <HeaderLeft onClick={e => navigate('/')}>
+        <HeaderLeft onClick={e => {
+          dispatch({
+            type: 'SET_PROGRESS',
+            currentProgress: 1
+          })
+          navigate('/')
+        }}>
           <HeaderLogo src={logo}/>
         </HeaderLeft>
         <HeaderRight>

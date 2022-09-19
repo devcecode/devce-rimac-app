@@ -18,10 +18,7 @@ function Plan() {
     if(!user) {
       navigate('/')
     }else {
-      dispatch({
-        type: 'SET_PROGRESS',
-        currentProgress: progress + 1
-      })
+      
     }
   }, [ user ])
 
