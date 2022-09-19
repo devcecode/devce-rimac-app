@@ -65,7 +65,7 @@ function LoginFormHome() {
     let checkedError      = ''
 
     if(!doc) docError                   = 'El documento de identidad es requerida'
-    if(!phone) phoneError               = 'Agraga un número telefónico'
+    if(!phone) phoneError               = 'Agrega un número telefónico'
     if(!licencePlate) licencePlateError = 'Ingrese la placa de su auto'
     if(!isChecked) checkedError         = 'aceptar las políticas de privacidad'
 
