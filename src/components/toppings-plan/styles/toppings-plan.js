@@ -90,6 +90,7 @@ letter-spacing: 0.2px;
 
 export const ToggleMobileAdd = styled.div`
 cursor: pointer;
+user-select: none;
 @media(min-width: 600px) {
   display: none;
 }
@@ -97,7 +98,7 @@ cursor: pointer;
 export const ToggleMobileContainer = styled.div`
 width: 51px;
 height: 31px;
-background-color: #E4E8F7;
+background-color: ${({ background }) => background};
 border-radius: 18px;
 position: relative;
 `
@@ -108,7 +109,7 @@ width: 28px;
 height: 28px;
 border-radius: 14px;
 top: 1px;
-left: 1px;
+left: ${({ left }) => left}px;
 `
 
 export const ShowOrHideDesktop = styled.div`
@@ -139,7 +140,7 @@ font-size: 10px;
 line-height: 16px;
 letter-spacing: .8PX;
 font-weight: 700;
-
+user-select: none;
 display: flex;
 align-items: center;
 cursor: pointer;
@@ -157,6 +158,7 @@ line-height: 16px;
 display: none;
 letter-spacing: 0.6px;
 cursor: pointer;
+user-select: none;
 
 @media(min-width: 600px) {
   display: flex;

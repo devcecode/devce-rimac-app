@@ -51,6 +51,7 @@ border: 1px solid #C5CBE0;
 border-radius: 4px;
 margin-bottom: 36px;
 min-width: 160px;
+user-select: none;
 
 @media(min-width: 600px) {
   border-radius: 8px;

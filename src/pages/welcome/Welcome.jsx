@@ -23,6 +23,7 @@ import { useNavigate } from 'react-router-dom'
 function Welcome() {
 
   const user = useSelector(({ user }) => user)
+  const totalAmount = useSelector(({ totalAmount }) => totalAmount)
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -42,6 +43,7 @@ function Welcome() {
           <GrettingContainer>
             <Title><Span style={{color: "#FF1C44"}}>¡Te damos la BienVenida!</Span> Cuenta con nosotros para proteger tu Vehículo</Title>
             <Paragraph>Enviaremos la confirmación de compra de tu Plan Vehícular Tracking a tu correo: <Email>{user.email}</Email></Paragraph>
+            <p style={{marginTop: '16px', color: '#676F8F'}}>Total Amount by Month: <span style={{fontWeight: '700'}}>${totalAmount}</span></p>
             <Button>CÓMO USAR MI SEGURO</Button>
             <CopyRight>© 2021 RIMAC Seguros y Reaseguros.</CopyRight>
           </GrettingContainer>

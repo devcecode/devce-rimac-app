@@ -37,6 +37,7 @@ margin-bottom: 16px;
 export const DdiContainer = styled.div`
 display: flex;
 justify-content: space-between;
+align-items: center;
 `
 
 export const PoliticsMessage = styled.div`
@@ -102,6 +103,7 @@ transform: rotate(45deg);
 
 export const SelectDocType = styled.div`
 position: relative;
+height: 56px;
 `
 
 export const SelectHeader = styled.div`
@@ -180,7 +182,7 @@ text-align: center;
 
 
 export const DdiInput = styled.input`
-height: 100%;
+height: 56px;
 padding: 1em;
 width: 100%;
 border: 1px solid #C5CBE0;

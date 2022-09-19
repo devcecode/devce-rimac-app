@@ -27,15 +27,9 @@ export const toppings = {
     }
   ],
   "Protege a lo que te rodean": [
-    {
-      title: "otro",
-      image: ""
-    }
+
   ],
   "Mejora tu Plan": [
-    {
-      "title": "hola",
-      image: ""
-    }
+    
   ]
 }
