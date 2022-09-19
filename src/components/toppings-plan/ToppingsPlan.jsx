@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 import { Title, 
@@ -31,30 +31,40 @@ function ToppingsPlan() {
   const navigate = useNavigate()
   const toppingsProperty                = Object.keys(toppings)
   const [ tabActive, setTabActive ]     = useState(toppingsProperty[0])
-  
-  const [ toppingsActive, setToppingsActive ] = useState([toppings[toppingsProperty[0]][0].title])
 
   const handleChangeTabActive = e => {
     e.preventDefault()
     setTabActive(toppingsProperty[e.target.id])
   }
 
+  const newObject = {}
+  toppingsProperty.map((tp, ti) => {
+    let newArray = []
+    toppings[tp].map((t, i) => {
+      if(i===0) {
+        newArray.push({...t, state: true, add: true})
+      }else {
+        newArray.push({...t, state: false, add: false})
+      }
+    })
+    newObject[tp] = newArray
+  })
 
-  const handleShowOrHideTopping = e => {
-    const current = e.target.id
-    const result = toppingsActive.find(x => x === current)
+  const [ Alltoppings, setAllToppings ] = useState(newObject)
 
-    if(!result) {
-      setToppingsActive(x => [...x, current])
-    }else {
-      toppingsActive.find((x, i) => {
-        const lol = toppingsActive
-        if(current === x) {
-          const filter =lol.filter(e => e !== x)
-          setToppingsActive(filter)
-        }
-      })
-    }
+
+  const updateStateOfAllTopings = e => {
+    const i      = e.target.id
+    const global = {...Alltoppings}
+    global[tabActive][i].state = !global[tabActive][i].state
+    setAllToppings(global)
+  }
+
+  const updateAddStateOfAllTopings = e => {
+    const i      = e.target.id
+    const global = {...Alltoppings}
+    global[tabActive][i].add = !global[tabActive][i].add
+    setAllToppings(global)
   }
 
   return (
@@ -69,7 +79,7 @@ function ToppingsPlan() {
           }
         </ToppingsTop>
         {
-          toppings[tabActive].map((t,i) => (
+          Alltoppings[tabActive].map((t,i) => (
             <ToppingsMiddle key={i}>
               <Left>
                 <Icon src={t.image}/>
@@ -77,23 +87,32 @@ function ToppingsPlan() {
               <Right>
                 <Header>
                   <HeaderTitle>{t.title}</HeaderTitle>
-                  <ToggleMobileAdd>
+                  <ToggleMobileAdd onClick={updateAddStateOfAllTopings}>
                     <ToggleMobileContainer>
                       <ToggleMobileElement></ToggleMobileElement>
                     </ToggleMobileContainer>
                   </ToggleMobileAdd>
-                  <ShowOrHideDesktop onClick={handleShowOrHideTopping} id={t.title}>
-                    <ion-icon name="chevron-up-outline" style={{color: '#EF3340', userSelect: 'none'}} id={t.title}></ion-icon>
+                  <ShowOrHideDesktop onClick={updateStateOfAllTopings} id={i}>
+                    {
+                      t.state === true ? (<ion-icon name="chevron-up-outline" style={{color: '#EF3340', userSelect: 'none'}} id={i}></ion-icon>) : (<ion-icon name="chevron-down-outline" style={{color: '#EF3340', userSelect: 'none'}} id={i}></ion-icon>)
+                    }
                   </ShowOrHideDesktop>
                 </Header>
                 {
-                  toppingsActive.map((ta, i) => (
-                    t.title === ta ? (<Content className='topping-active' key={i}>{t.content}</Content>) : (<Content key={i}>{t.content}</Content>)
-                  ))
+                  t.state === true ? (<Content className='topping-active' key={i}>{t.content}</Content>) : (<Content key={i}>{t.content}</Content>)
                 }
-                <FooterMobile onClick={handleShowOrHideTopping} id={t.title}>
-                  VER MÁS <ion-icon name="chevron-up-outline" style={{marginLeft: '11px', fontWeight: '400'}} id={t.title}></ion-icon>
-                </FooterMobile>
+
+                {
+                  t.state === true ? (
+                    <FooterMobile onClick={updateStateOfAllTopings} id={i}>
+                      VER MENOS <ion-icon name="chevron-up-outline" style={{marginLeft: '11px', fontWeight: '400'}} id={i}></ion-icon>
+                    </FooterMobile>
+                  ) : (
+                    <FooterMobile onClick={updateStateOfAllTopings} id={i}>
+                      VER MÁS <ion-icon name="chevron-down-outline" style={{marginLeft: '11px', fontWeight: '400'}} id={i}></ion-icon>
+                    </FooterMobile>
+                  )
+                }
                 <FooterDesktop>
                   <ion-icon name="add-circle-outline" style={{fontSize: '28px', marginRight: '12px'}}></ion-icon> AGREGAR
                 </FooterDesktop>

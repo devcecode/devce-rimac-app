@@ -137,6 +137,8 @@ margin-top: 12px;
 color: #6F7DFF;
 font-size: 10px;
 line-height: 16px;
+letter-spacing: .8PX;
+font-weight: 700;
 
 display: flex;
 align-items: center;
