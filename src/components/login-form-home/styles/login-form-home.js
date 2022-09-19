@@ -233,7 +233,7 @@ export const InputError = styled.p`
 font-size: 14px;
 color: red;
 margin-top: .5em;
-text-align: center;
+/* text-align: center; */
 `
 
 

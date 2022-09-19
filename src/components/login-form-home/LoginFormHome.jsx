@@ -34,7 +34,7 @@ function LoginFormHome() {
   const docs = ['DNI', 'C. EXTRANJERÍA', 'PASAPORTE']
   const [ select, setSelect ]               = useState('DNI')
   const [ selectVisible, setSelectVisible ] = useState(false)
-  const [ isChecked, setIsChecked ]         = useState(true)
+  const [ isChecked, setIsChecked ]         = useState(false)
   
   const [ doc, setDoc ]                   = useState('')
   const [ phone, setPhone ]               = useState('')
@@ -68,7 +68,7 @@ function LoginFormHome() {
     if(!doc) docError                   = 'El documento de identidad es requerida'
     if(!phone) phoneError               = 'Agraga un número telefónico'
     if(!licencePlate) licencePlateError = 'Ingrese la placa de su auto'
-    if(!isChecked) checkedError         = 'Debes aceptar las políticas de privacidad'
+    if(!isChecked) checkedError         = 'aceptar las políticas de privacidad'
 
     if(docError || phoneError || licencePlateError || checkedError) {
       setDocError(docError)
