@@ -42,7 +42,7 @@ function Header() {
           <HeaderContactDesktop>
             <span style={{color: '#676F8F'}}>¿Tienes alguna Duda?</span>
             <img src={icPhone} style={{marginRight: '8px', marginLeft: '23px'}}/>
-            (051) 985574152
+            (01) 4116001
           </HeaderContactDesktop>
         </HeaderRight>
       </HeaderContainer>
