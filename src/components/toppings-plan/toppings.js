@@ -3,7 +3,7 @@ import icon2 from '../../assets/icon2.svg'
 import icon3 from '../../assets/icon3.svg'
 
 
-// Sí sí esto es un objeto de arreglos y no un arreglo de objetos ¿por que?, para extraer cada propiedad o más conocido en el mundo de Javascript como Keys del objeto; que en este caso seŕia el nombre de cada arreglo, Para iterarlos y definirlos como nombres de las coberturas.
+// Sí sí esto es un objeto de arreglos y no un arreglo de objetos ¿por que?, para extraer cada propiedad o más conocido en el mundo de Javascript como Keys del objeto; que en este caso sería el nombre de cada arreglo, Para iterarlos y definirlos como nombres de las coberturas.
 
 export const toppings = {
   "Protege a tu auto": [

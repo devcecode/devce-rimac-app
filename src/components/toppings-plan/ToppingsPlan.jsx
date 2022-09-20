@@ -40,7 +40,7 @@ function ToppingsPlan() {
     setTabActive(toppingsProperty[e.target.id])
   }  
   
-  // Por lo general, no se recomienda mutar datos, pero en este caso lo quise hacer así. asi entonces obtendríamos cualquier dato del lado del backend, que en este caso es 'toppings' que es un objeto la cual  se importa del  archivo toppings.js en el cual se hace una llamada a la API y se obtienen los datos. Entonces para hacer más fácil la tarea de mostrar o no el contido de cada cobertura o topping y agregar o eliminar montos quise mutar el objeto y agregarles las propiedades (state y add). Así entonces cada objeto de la data tendría estos dos propiedades adicionales las cuales se pueden manipular y cambiar facilmente y dependiendo de eso mostrar o no un elemento y agregar o eliminar un monto.
+  // Por lo general, no se recomienda mutar datos, pero en este caso lo quise hacer así. asi entonces obtendríamos cualquier dato del lado del backend, que en este caso es 'toppings' que es un objeto de arreglos la cual  se importa del archivo toppings.js. Entonces para hacer más fácil la tarea de mostrar o no el contido de cada cobertura o topping y agregar o eliminar montos quise mutar cada objeto de cada arreglo el cual está dentro de un objeto y agregarles las propiedades (state y add). Así entonces cada objeto de cada arreglo tendría estas dos propiedades adicionales las cuales se pueden manipular facilmente y dependiendo de eso mostrar o no un elemento y agregar o eliminar un monto.
 
   const newObject = {}
   toppingsProperty.map((property, ti) => {
