@@ -18,7 +18,7 @@ display: none;
 `
 
 export const TotalAmountPLanContainer = styled.div`
-width: 287.5px;
+width: 263.91px;
 `
 
 export const TotalAmountTitle = styled.h2`
