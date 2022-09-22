@@ -6,6 +6,8 @@ width: 100%;
 top: 0;
 left: 0;
 z-index: 10000;
+background-color: rgba(255,255,255,.7);
+backdrop-filter: saturate(50%) blur(8px);
 `
 
 export const HeaderContainer = styled.div`

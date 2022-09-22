@@ -23,7 +23,7 @@ function Header() {
   const { pathname } = useLocation()
 
   return (
-    <HeaderStyled style={pathname !== '/' ? {borderBottom: '1px solid #E4E8F7', backgroundColor: '#ffffff'} : {border: 'none'}}>
+    <HeaderStyled style={pathname !== '/' ? {borderBottom: '1px solid #E4E8F7'} : {border: 'none'}}>
       <HeaderContainer>
         <HeaderLeft onClick={e => {
           dispatch({
