@@ -137,7 +137,7 @@ function LoginFormHome() {
             {docError && <InputError>{docError}</InputError>}
           </Ddi>
           <FormElement>
-            <Input type="text" placeholder="Celular" value={phone} onChange={e => {setPhone(e.target.value); setPhoneError('123456789')}}/>
+            <Input type="text" placeholder="Celular: 123456789" value={phone} onChange={e => {setPhone(e.target.value); setPhoneError('')}}/>
             {phoneError && <InputError>{phoneError}</InputError>}
           </FormElement>
           <FormElement>
