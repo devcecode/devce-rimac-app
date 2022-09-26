@@ -34,11 +34,11 @@ function LoginFormHome() {
   const docs = ['DNI', 'C. EXTRANJERÍA', 'PASAPORTE']
   const [ select, setSelect ]               = useState('DNI')
   const [ selectVisible, setSelectVisible ] = useState(false)
-  const [ isChecked, setIsChecked ]         = useState(false)
+  const [ isChecked, setIsChecked ]         = useState(true)
   
   const [ doc, setDoc ]                   = useState('12345678')
-  const [ phone, setPhone ]               = useState('123456789')
-  const [ licencePlate, setLicencePlate ] = useState('4567-JM')
+  const [ phone, setPhone ]               = useState('')
+  const [ licencePlate, setLicencePlate ] = useState('')
   
   const [ docError, setDocError ]                   = useState('')
   const [ phoneError, setPhoneError ]               = useState('')
@@ -137,11 +137,11 @@ function LoginFormHome() {
             {docError && <InputError>{docError}</InputError>}
           </Ddi>
           <FormElement>
-            <Input type="text" placeholder="Celular" value={phone} onChange={e => {setPhone(e.target.value); setPhoneError('')}}/>
+            <Input type="text" placeholder="Celular" value={phone} onChange={e => {setPhone(e.target.value); setPhoneError('123456789')}}/>
             {phoneError && <InputError>{phoneError}</InputError>}
           </FormElement>
           <FormElement>
-            <Input type="text" placeholder="Placa" value={licencePlate} onChange={e => {setLicencePlate(e.target.value); setLicencePlateError('')}}/>
+            <Input type="text" placeholder="Placa: 4567-JM" value={licencePlate} onChange={e => {setLicencePlate(e.target.value); setLicencePlateError('')}}/>
             {licencePlateError && <InputError>{licencePlateError}</InputError>}
           </FormElement>
 
