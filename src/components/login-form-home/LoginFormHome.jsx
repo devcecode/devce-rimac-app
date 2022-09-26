@@ -36,9 +36,9 @@ function LoginFormHome() {
   const [ selectVisible, setSelectVisible ] = useState(false)
   const [ isChecked, setIsChecked ]         = useState(false)
   
-  const [ doc, setDoc ]                   = useState('')
-  const [ phone, setPhone ]               = useState('')
-  const [ licencePlate, setLicencePlate ] = useState('')
+  const [ doc, setDoc ]                   = useState('12345678')
+  const [ phone, setPhone ]               = useState('123456789')
+  const [ licencePlate, setLicencePlate ] = useState('4567-JM')
   
   const [ docError, setDocError ]                   = useState('')
   const [ phoneError, setPhoneError ]               = useState('')
